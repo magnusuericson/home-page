@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  background: #111;
+  color: #00ff88;
+  font-family: monospace;
+}
+
+#terminal {
+  padding: 24px;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+#output p {
+  margin: 6px 0;
+}
+
+span {
+  color: #fff;
+}
+
+#input-line {
+  display: flex;
+  gap: 8px;
+}
+
+.prompt {
+  color: #00ccff;
+}
+
+input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #00ff88;
+  font-family: monospace;
+  font-size: 16px;
+  flex: 1;
+}

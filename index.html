@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+  <title>Terminal Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>My website is working.</p>
+  <div id="terminal">
+    <div id="output">
+      <p>Welcome to MagnusOS Portfolio.</p>
+      <p>Type <span>help</span> to begin.</p>
+    </div>
+
+    <div id="input-line">
+      <span class="prompt">guest@portfolio:~$</span>
+      <input id="command-input" autofocus />
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

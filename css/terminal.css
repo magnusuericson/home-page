@@ -1,0 +1,44 @@
+#terminal-container {
+    margin: 24px;
+    padding: 24px;
+/*     height: 100vh; */
+    width: 500px;
+    height: 200px;
+    box-sizing: border-box;
+    color: #505ff6;
+    font-family: monospace;
+    background-color: #393939;
+    border: 2px solid #505ff6;
+    border-radius: 12px;
+
+    overflow-y: auto;   /* vertical scrolling */
+    overflow-x: hidden; /* prevent horizontal scrollbar */
+}
+
+
+
+.terminal-output p {
+    margin: 6px 0;
+}
+
+.terminal-prompt {
+    color: #00ccff;
+}
+
+.terminal-input-line {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-input {
+  background: transparent;
+  border: none;
+  outline: none;
+/*   color: #00ff88; */
+  color: #505ff6;
+  font-family: inherit;
+  font-size: inherit;
+  flex: 1;
+  min-width: 0;
+  caret-color: #505ff6;
+}

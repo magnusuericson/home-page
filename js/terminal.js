@@ -1,22 +1,8 @@
-async function loadHtml(path, targetId) {
-  const response = await fetch(path);
+//terminal.js
 
-  if (!response.ok) {
-    throw new Error(`Could not load ${path}`);
-  }
+import {navigate} from "./routing.js"
 
-  const html = await response.text();
-  document.getElementById(targetId).innerHTML = html;
-}
-
-async function init() {
-  await loadHtml("pages/home_page.html", "app");
-  await loadHtml("components/terminal.html", "terminal-container");
-
-  initTerminal();
-}
-
-function initTerminal() {
+export function initTerminal() {
   const input = document.getElementById("command-input");
   const output = document.getElementById("output");
 
@@ -32,17 +18,17 @@ function initTerminal() {
     output.appendChild(p);
   }
 
-  input.addEventListener("keydown", function (event) {
+  input.addEventListener("keydown", async function (event) {
     if (event.key !== "Enter") return;
 
     const command = input.value.trim();
     print(`ost@ost:~$ ${command}`);
     input.value = "";
 
-    handleCommand(command);
+    await handleCommand(command);
   });
 
-  function handleCommand(command) {
+  async function handleCommand(command) {
     if (command === "help") {
       print("Commands: help, ls, cat <project>, open github, clear");
     } else if (command === "ls") {
@@ -55,10 +41,11 @@ function initTerminal() {
       window.open("https://github.com/YOUR_USERNAME", "_blank");
     } else if (command === "clear") {
       output.innerHTML = "";
+    } else if (command === "cd circuit-tui") {
+      // await loadHtml("pages/circuit_tui_page.html", "app");
+      navigate("circuit-tui")
     } else {
       print(`Command not found: ${command}`);
     }
   }
 }
-
-init();

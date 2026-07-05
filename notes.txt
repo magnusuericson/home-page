@@ -1,0 +1,4 @@
+
+Terminal path should be updated after doing cd ...
+
+

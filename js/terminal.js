@@ -43,7 +43,10 @@ export function initTerminal() {
       output.innerHTML = "";
     } else if (command === "cd circuit-tui") {
       // await loadHtml("pages/circuit_tui_page.html", "app");
-      navigate("circuit-tui")
+      navigate("circuit-tui");
+    } else if (command === "cd home") {
+      // await loadHtml("pages/circuit_tui_page.html", "app");
+      navigate("home");
     } else {
       print(`Command not found: ${command}`);
     }

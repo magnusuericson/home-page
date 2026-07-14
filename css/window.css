@@ -1,0 +1,19 @@
+.window {
+  opacity: 0;
+  transform: translateY(20px);
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease,
+    visibility 200ms;
+}
+
+.window.open {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+

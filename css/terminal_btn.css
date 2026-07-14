@@ -1,0 +1,26 @@
+#terminal-btn {
+  height: 100%;
+  padding: 0 16px;
+
+  border: none;
+  background: none;
+  color: white;
+
+  font: inherit;
+  font-size: 3.4rem;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.2s;
+}
+
+#terminal-btn:hover {
+  transform: translateY(-9px);
+}
+
+#terminal-btn:active {
+  transform: translateY(0);
+}

@@ -2,6 +2,7 @@
 
 import { initRouter } from "./routing.js";
 import { initTerminal } from "./terminal.js";
+import { initTerminalBtn } from "./terminal_btn.js";
 
 async function loadHtml(path, targetId) {
   const target = document.getElementById(targetId);
@@ -19,6 +20,7 @@ async function loadHtml(path, targetId) {
   const html = await response.text();
   target.innerHTML = html;
 }
+
 
 async function render(route) {
   console.log("Loading:", route);
@@ -48,7 +50,16 @@ async function render(route) {
   }
 }
 
-initRouter(render);
+async function init(){
+  await loadHtml("./components/header.html", "header")
+  // await loadHtml("./components/footer.html", "footer")
+  await loadHtml("./components/taskbar.html", "taskbar")
+  initTerminalBtn();
+  initRouter(render);
+}
+
+init();
+
 
 // async function init() {
 //   console.log("init start");
